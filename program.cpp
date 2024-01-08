@@ -7,7 +7,7 @@ int cScore;
 int hScore;
 int main()
 {
-    while (true)
+    while (true) // game will continue untill score of 3
     {
         if (hScore == 3)
         {
@@ -19,12 +19,10 @@ int main()
             cout << "I Won the game!!!";
             break;
         }
-
-        srand(time(NULL));                // to make new seeds
-        int randomNum = (rand() % 3) + 1; // a random number bitween 1, 2, 3.
-        string randomChoosed;
-        string choosed;
-
+        srand(time(NULL));                // to make new seeds for random number
+        int randomNum = (rand() % 3) + 1; // a random number between 1, 2, 3.
+        string randomChoosed;             // computer choice
+        string choosed;                   // human choice
         string rps[4] = {" ", "rock", "paper", "scissors"};
         int choosedNum;
         for (int i = 1; i < 4; i++) // recognizing what computer choice is and saving it into randomChoosed.
@@ -55,27 +53,27 @@ int main()
         // cout << choosed << endl;
         // cout << randomNum << endl;
         // cout << randomChoosed << endl;
-        if (choosed == rps[1]) // rock
+        if (choosed == rps[1]) // human choosed rock
         {
-            if (randomChoosed == rps[1])
+            if (randomChoosed == rps[1]) // rock
             {
                 cout << "Your ROCK  vs  My ROCK!!!" << endl
                      << "Draw!" << endl;
             }
-            else if (randomChoosed == rps[2])
+            else if (randomChoosed == rps[2]) // paper
             {
                 cout << "Your ROCK  vs  My PAPER!!!" << endl
                      << "I win! :)" << endl;
                 cScore++;
             }
-            else if (randomChoosed == rps[3])
+            else if (randomChoosed == rps[3]) // scissors
             {
                 cout << "Your ROCK  vs  My CSISSORS!!!" << endl
                      << "You win! :(" << endl;
                 hScore++;
             }
         }
-        else if (choosed == rps[2]) // paper
+        else if (choosed == rps[2]) // human choosed paper
         {
             if (randomChoosed == rps[1]) // rock
             {
@@ -95,7 +93,7 @@ int main()
                 cScore++;
             }
         }
-        else if (choosed == rps[3]) // csissors
+        else if (choosed == rps[3]) // human choosed csissors
         {
             if (randomChoosed == rps[1]) // rock
             {
